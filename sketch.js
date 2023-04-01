@@ -37,6 +37,13 @@ function setup() {
 }
 
 function draw() {
+  //negative sign
+  if(keyIsDown(189) && zoom1 < maxZoom){ zoom1 /= 0.95;}
+  //plus sign
+  if(keyIsDown(187) && zoom1 > minZoom) zoom1 *= 0.95;
+  
+  
+  
   background("#1c1c1c");
   if(isPlaying){
     let gridSize = int(zoom1);
@@ -88,10 +95,9 @@ function keyPressed() {
       shape = 0;
     }
   }
-  if (keycode == 189) zoom1 -= 10;
-
-  if (keycode == 187) zoom1 += 10;
 }
+
+
 
 function mouseClicked() {
   if(!isPlaying){
@@ -101,9 +107,3 @@ function mouseClicked() {
     
   fillC = color(random(0, 256), random(0, 256), random(0, 256));
 }
-
-// function mouseWheel(event) {
-//   zoom1 -= event.delta / 100;
-//   if (zoom1 < minZoom) zoom1 = minZoom;
-//   else if (zoom1 > maxZoom) zoom1 = maxZoom;
-// }
