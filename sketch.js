@@ -88,6 +88,9 @@ function keyPressed() {
       shape = 0;
     }
   }
+  if (keycode == 189) zoom1 -= 10;
+
+  if (keycode == 187) zoom1 += 10;
 }
 
 function mouseClicked() {
@@ -99,8 +102,8 @@ function mouseClicked() {
   fillC = color(random(0, 256), random(0, 256), random(0, 256));
 }
 
-function mouseWheel(event) {
-  zoom1 -= event.delta / 100;
-  if (zoom1 < minZoom) zoom1 = minZoom;
-  else if (zoom1 > maxZoom) zoom1 = maxZoom;
-}
+// function mouseWheel(event) {
+//   zoom1 -= event.delta / 100;
+//   if (zoom1 < minZoom) zoom1 = minZoom;
+//   else if (zoom1 > maxZoom) zoom1 = maxZoom;
+// }
